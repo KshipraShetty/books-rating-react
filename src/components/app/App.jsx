@@ -43,7 +43,7 @@ componentWillMount = () => {
    }
 
    render() {
-     if (Object.getOwnPropertyNames(this.props.savedBooks).length === 0) {
+     if (Object.getOwnPropertyNames(this.props.savedBooks).length === 0 && this.state.displayPage === 0) {
        return (
 
          <div className="App" >
