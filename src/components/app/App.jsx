@@ -15,7 +15,22 @@ class App extends Component {
       displayPage: 0,
     };
   }
-
+componentWillMount = () => {
+  fetch('/books/fetchDatabase')
+    .then((response) => {
+      if (!response.ok) {
+        console.log('Network request failed');
+      }
+      return response;
+    })
+    .then(data => (data.json()))
+    .then((books) => {
+      this.props.saveBook(books.data);
+    });
+  this.setState({
+    displayPage: 1,
+  });
+}
    syncBooks = () => {
      fetch('/books/booksRating/populate')
        .then((response) => {
@@ -25,21 +40,6 @@ class App extends Component {
          return response;
        })
        .then(data => (data.json()));
-
-     fetch('/books/fetchDatabase')
-       .then((response) => {
-         if (!response.ok) {
-           console.log('Network request failed');
-         }
-         return response;
-       })
-       .then(data => (data.json()))
-       .then((books) => {
-         this.props.saveBook(books.data);
-       });
-     this.setState({
-       displayPage: 1,
-     });
    }
 
    render() {
