@@ -27,9 +27,6 @@ componentWillMount = () => {
     .then((books) => {
       this.props.saveBook(books.data);
     });
-  this.setState({
-    displayPage: 1,
-  });
 }
    syncBooks = () => {
      fetch('/books/booksRating/populate')
@@ -40,6 +37,9 @@ componentWillMount = () => {
          return response;
        })
        .then(data => (data.json()));
+     this.setState({
+       displayPage: 1,
+     });
    }
 
    render() {
@@ -75,7 +75,25 @@ componentWillMount = () => {
        );
      }
      return (
-       <div />
+       <div className="App" >
+         <div className="SideBar">
+           <header className="SideBarHeader"> {this.props.bs}</header>
+           <div className="SideBarSync">
+             <MaterialIcon icon="sync" color="white" size="32px" />
+           </div>
+           <div className="SideBarSettings">
+             <MaterialIcon icon="settings" color="white" size="32px" />
+           </div>
+         </div>
+
+
+         <div className="MainBody">
+           <div className="MainHeader">
+             <div className="Header">{this.props.header}</div>
+           </div>
+
+         </div>
+       </div>
      );
    }
 }
@@ -84,6 +102,7 @@ App.propTypes = {
   bs: PropTypes.string,
   notFoundText: PropTypes.string,
   saveBook: PropTypes.func,
+  savedBooks: PropTypes.object,
 };
 
 App.defaultProps = {
@@ -91,6 +110,7 @@ App.defaultProps = {
   bs: 'Bs',
   notFoundText: 'Oops! No books found! Import them now ?',
   saveBook: () => {},
+  savedBooks: {},
 };
 
 const mapStateToProps = state => ({
