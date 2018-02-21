@@ -33,6 +33,14 @@ class App extends Component {
             <div className="MainHeader">
               <div className="Header">{this.props.header}</div>
             </div>
+            <div className="MainBodyContainer">
+              <div className="NotFound">
+                <p className="NotFoundText">{this.props.notFoundText}</p>
+                <button className="FirstSync" >
+                  <MaterialIcon icon="sync" color="white" size="32px" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       );
@@ -42,15 +50,17 @@ class App extends Component {
     );
   }
 }
-
 App.propTypes = {
   header: PropTypes.string,
   bs: PropTypes.string,
+  notFoundText: PropTypes.string,
 };
 
 App.defaultProps = {
   header: 'The Book Shelf',
   bs: 'Bs',
+  notFoundText: 'Oops! No books found! Import them now ?',
 };
+
 
 export default App;

@@ -52,3 +52,33 @@ font-weight: 400;
   padding-top: 10px;
   width:30%;
 }
+
+.MainBodyContainer {
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+  width: 90%;
+}
+
+.NotFound {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  background-color: rgba(244, 119, 50, 0.9);
+  border-radius: 5px;
+  margin: 50px;
+  height: 50%;
+  align-items: center;
+}
+.NotFoundText {
+  font-size: 32px;
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+}
+.FirstSync {
+  background-color: rgba(244, 119, 50, 0.9);
+  border-style: none;
+  flex-grow: 3;
+  align-items: flex-start;
+}
