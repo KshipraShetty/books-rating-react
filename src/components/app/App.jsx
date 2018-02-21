@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import MaterialIcon from 'material-icons-react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import displaySaveAction from '../../redux/actions';
+
 
 import './App.css';
 
@@ -21,8 +24,7 @@ class App extends Component {
          }
          return response;
        })
-       .then(data => (data.json()))
-       .then(books => console.log(books));
+       .then(data => (data.json()));
 
      fetch('/books/fetchDatabase')
        .then((response) => {
@@ -32,17 +34,17 @@ class App extends Component {
          return response;
        })
        .then(data => (data.json()))
-       .then(books => console.log(books));
+       .then((books) => {
+         this.props.saveBook(books.data);
+       });
      this.setState({
        displayPage: 1,
      });
-     // this.props.changeDisplay(1);
    }
 
    render() {
-     if (!this.state.displayPage) {
+     if (Object.getOwnPropertyNames(this.props.savedBooks).length === 0) {
        return (
-
 
          <div className="App" >
            <div className="SideBar">
@@ -81,13 +83,24 @@ App.propTypes = {
   header: PropTypes.string,
   bs: PropTypes.string,
   notFoundText: PropTypes.string,
+  saveBook: PropTypes.func,
 };
 
 App.defaultProps = {
   header: 'The Book Shelf',
   bs: 'Bs',
   notFoundText: 'Oops! No books found! Import them now ?',
+  saveBook: () => {},
 };
 
+const mapStateToProps = state => ({
+  savedBooks: state.savedBooks,
+  display: state.display,
+});
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  saveBook: bookData => dispatch(displaySaveAction(bookData)),
+
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
