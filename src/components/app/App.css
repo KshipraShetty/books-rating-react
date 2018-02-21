@@ -1,0 +1,54 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 100vh;
+}
+
+.SideBar {
+  background-color: rgb(43, 47, 42);
+  flex-grow: .07;
+  display: flex;
+  flex-direction: column;
+}
+
+.MainBody {
+  flex-grow: 1.3;
+  display: flex;
+  flex-direction: column;
+}
+
+.SideBarHeader {
+color: white;
+font-size: 32px;
+flex-grow: 1;
+text-align: center;
+padding-top: 10px;
+font-weight: 400;
+}
+
+.SideBarSync {
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+
+.SideBarSettings {
+  padding-bottom: 20px;
+  padding-left: 30px;
+}
+
+.MainHeader {
+  display: flex;
+  flex-direction: row;
+  height: 5%;
+}
+
+.Header {
+  background-color: rgb(173, 82, 49);
+  text-decoration: underline;
+  color: white;
+  border-bottom-right-radius: 10px;
+  text-align: center;
+  padding-top: 10px;
+  width:30%;
+}
