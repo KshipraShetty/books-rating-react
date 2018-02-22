@@ -1,0 +1,7 @@
+.BookContainer {
+    display: flex;
+    flex-direction: column;
+    height:80%;
+    border-radius: 10px;
+    background: white;
+}
