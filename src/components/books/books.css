@@ -1,7 +1,32 @@
 .BookContainer {
     display: flex;
     flex-direction: column;
-    height:80%;
     border-radius: 10px;
     background: white;
+    margin-top:1px;
+    margin-left: 15px;
+    width: 150px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    box-shadow:2px 2px 2px 2px rgb(177, 71, 22);
+    justify-content: flex-start;
+
+}
+
+.BookImage{
+    background: url(https://images-na.ssl-images-amazon.com/images/I/51VNlzbfpXL._SX331_BO1,204,203,200_.jpg);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width:100%;
+    height: 40%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.BookTitle {
+    font-size: 14px;
+    font-weight: bold;
+    align-items: flex-start;
+    word-wrap: break-word;
 }

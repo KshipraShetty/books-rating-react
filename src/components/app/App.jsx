@@ -16,6 +16,10 @@ class App extends Component {
       displayPage: 0,
     };
   }
+
+  componentWillMount = () => {
+    this.fetchData();
+  }
   fetchData = () => fetch('/books/fetchDatabase')
     .then((response) => {
       if (!response.ok) {
@@ -27,9 +31,6 @@ class App extends Component {
     .then((books) => {
       this.props.saveBook(books.data);
     })
-  componentWillMount = () => {
-    this.fetchData();
-  }
   syncBooks = () => {
     fetch('/books/booksRating/populate')
       .then((response) => {
@@ -72,7 +73,7 @@ class App extends Component {
               <div className="NotFound">
                 <p className="NotFoundText">{this.props.notFoundText}</p>
                 <button className="FirstSync" onClick={this.syncBooks}>
-                  <MaterialIcon icon="sync" color="white" size="48px" />
+                  <MaterialIcon icon="sync" color="white" size="75%" />
                 </button>
               </div>
             </div>
@@ -93,7 +94,7 @@ class App extends Component {
         </div>
 
 
-        <div className="MainBody">
+        <div className="MainCompleteBody">
           <div className="MainHeader">
             <div className="Header">The <span className="HeaderBook">Book</span> Store</div>
           </div>

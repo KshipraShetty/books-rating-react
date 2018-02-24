@@ -8,12 +8,28 @@ class BookContent extends Component {
   render() {
     // const allBooks = Object.keys(this.props.savedBooks).map(() => (<Books />));
     // Object.keys(this.props.savedBooks)[this.props.authorNo]
+    // let allBooks =
+    // for (let i = 0; i < Object.keys(this.props.savedBooks)[this.props.authorNo].length; i += 1) {
+    //   return ();
+    // }
+
+    // use this
+    console.log(this.props.savedBooks[Object.keys(this.props.savedBooks)[this.props.authorNo]]);
+    const books = this.props.savedBooks[Object.keys(this.props.savedBooks)[this.props.authorNo]]
+      .map(eachBook => (
+
+        <Books
+          EachBook={eachBook}
+        />
+      ));
     return (
       <div className="BookContent">
         <div className="BookAuthor">
           {Object.keys(this.props.savedBooks)[this.props.authorNo]}
         </div>
-
+        <div className="BooksList" >
+          {books}
+        </div>
       </div>
     );
   }

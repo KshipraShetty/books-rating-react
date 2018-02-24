@@ -12,7 +12,7 @@
   flex-direction: column;
 }
 
-.MainBody {
+.MainCompleteBody {
   flex-grow: 1.3;
   display: flex;
   flex-direction: column;
@@ -78,6 +78,7 @@ font-weight: 400;
   font-weight: bold;
   flex-grow: 1;
   text-align: center;
+  margin: 4px;
 }
 .FirstSync {
   background-color: rgba(235, 92, 15, 0.988);
