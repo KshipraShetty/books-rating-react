@@ -8,8 +8,7 @@
 
 .BookAuthor {
 background: white;
-height: 50px;
-padding-top: 20px;
+padding-top: 10px;
 padding-left: 50px;
 font-size: 26px;
 font-weight: 300;
@@ -20,4 +19,5 @@ font-weight: 300;
     flex-direction: row;
     flex-flow: row wrap;
     height: 50vh;
+    justify-content: flex-start;
 }

@@ -21,7 +21,7 @@
     height: 40%;
     background-repeat: no-repeat;
     background-size: cover;
-
+flex-grow: 1;
 }
 
 .BookTitle {
@@ -29,4 +29,25 @@
     font-weight: bold;
     align-items: flex-start;
     word-wrap: break-word;
+    margin-top: 10px;
+    flex-grow: 1;
+
+}
+
+.Rating {
+  margin-top: 10px;
+  font-size: 22px;
+  flex-grow: 1;
+
+}
+
+.AuthorName {
+  margin-top: 10px;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 14px;
+  margin-right: 3px;
+  flex-grow: 1;
+  
+
 }
