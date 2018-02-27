@@ -2,6 +2,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-y: scroll;
+
     background-color: rgba(235, 92, 15, 0.988);
 }

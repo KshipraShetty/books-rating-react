@@ -9,13 +9,13 @@ const reducer = (state = defaultState, action) => {
       Object.keys(action.payload).sort().forEach((key) => {
         newSaved[key] = action.payload;
       });
-      console.log(newSaved);
       Object.keys(newSaved).forEach((bookAuthor) => {
         newSaved[bookAuthor] = action.payload[bookAuthor].sort((a, b) =>
           a.bookID - b.bookID);
       });
-      console.log(newSaved);
       return { ...state, savedBooks: newSaved }; }
+
+
     case 'TOGGLE_LIKE': {
       const newState = {};
       const newSaved = {};
