@@ -40,7 +40,8 @@ font-weight: 400;
 .MainHeader {
   display: flex;
   flex-direction: row;
-  height: 15%;
+  height: 17%;
+  background-color: white;
 }
 
 .Header {

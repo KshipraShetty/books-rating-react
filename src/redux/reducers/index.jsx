@@ -4,10 +4,21 @@ const defaultState = {
 
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
-    case 'ADD':
-      return { ...state, savedBooks: action.payload };
+    case 'ADD': {
+      const newSaved = {};
+      Object.keys(action.payload).sort().forEach((key) => {
+        newSaved[key] = action.payload;
+      });
+      console.log(newSaved);
+      Object.keys(newSaved).forEach((bookAuthor) => {
+        newSaved[bookAuthor] = action.payload[bookAuthor].sort((a, b) =>
+          a.bookID - b.bookID);
+      });
+      console.log(newSaved);
+      return { ...state, savedBooks: newSaved }; }
     case 'TOGGLE_LIKE': {
       const newState = {};
+      const newSaved = {};
 
       Object.keys(state.savedBooks).forEach((author) => {
         const booksByAuthor = [];
@@ -31,9 +42,16 @@ const reducer = (state = defaultState, action) => {
         }
 
         newState[author] = booksByAuthor;
+        Object.keys(newState).sort().forEach((key) => {
+          newSaved[key] = newState[key];
+        });
+        Object.keys(newSaved).forEach((bookAuthor) => {
+          newSaved[bookAuthor] = newSaved[bookAuthor].sort((a, b) =>
+            a.bookID - b.bookID);
+        });
       });
       // console.log(newState);
-      return { ...state, savedBooks: newState };
+      return { ...state, savedBooks: newSaved };
     }
 
     default: return state;

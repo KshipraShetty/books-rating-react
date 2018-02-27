@@ -1,9 +1,8 @@
-
 .BookContent {
+    height: 40%;
     display: flex;
     flex-direction: column;
     background-color: rgba(235, 92, 15, 0.988);
-    flex-grow: 1;
 }
 
 .BookAuthor {
@@ -19,7 +18,5 @@
     display:flex;
     flex-direction: row;
     flex-flow: row wrap;
-    justify-content: flex-start;
-    overflow-y: auto;
-
+    overflow-y: scroll;
 }
