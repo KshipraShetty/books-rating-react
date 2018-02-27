@@ -50,8 +50,7 @@ class App extends Component {
   }
 
   render() {
-    if (Object.getOwnPropertyNames(this.props.savedBooks).length === 0
-      && this.state.displayPage === 0) {
+    if (Object.getOwnPropertyNames(this.props.savedBooks).length === 0) {
       return (
         <div className="App" >
           <div className="SideBar">
@@ -127,7 +126,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  saveBook: bookData => dispatch(displaySaveAction(bookData)),
+  saveBook: bookData => dispatch(displaySaveAction(bookData, 'ADD')),
 
 });
 

@@ -15,14 +15,11 @@ class MainBody extends Component {
   render() {
     const allBooks = Object.keys(this.props.savedBooks).map(() => {
       this.state.authorNo += 1;
+      if (this.state.authorNo > 1) {
+        this.state.authorNo = 0;
+      }
       return (<BookContent authorNo={this.state.authorNo} />);
     });
-    //  console.log(numOfAuthors);
-    // const allBooks = [];
-    // for (let i = 0; i < numOfAuthors; i += 1) {
-    //   allBooks.push((<BookContent />));
-    // }
-    // console.log(allBooks);
     return (
       <div className="MainBody">
         {allBooks}

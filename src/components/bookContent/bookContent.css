@@ -1,23 +1,25 @@
+
 .BookContent {
     display: flex;
     flex-direction: column;
     background-color: rgba(235, 92, 15, 0.988);
     flex-grow: 1;
-    height:50vh;
 }
 
 .BookAuthor {
-background: white;
-padding-top: 10px;
-padding-left: 50px;
-font-size: 26px;
-font-weight: 300;
+    background: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 50px;
+    font-size: 26px;
+    font-weight: 300;
 }
 
 .BooksList {
     display:flex;
     flex-direction: row;
     flex-flow: row wrap;
-    height: 50vh;
     justify-content: flex-start;
+    overflow-y: auto;
+
 }

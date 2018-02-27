@@ -1,23 +1,14 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import displaySaveAction from '../../redux/actions';
 import './bookContent.css';
 import Books from '../books/books';
 
 class BookContent extends Component {
   render() {
-    // const allBooks = Object.keys(this.props.savedBooks).map(() => (<Books />));
-    // Object.keys(this.props.savedBooks)[this.props.authorNo]
-    // let allBooks =
-    // for (let i = 0; i < Object.keys(this.props.savedBooks)[this.props.authorNo].length; i += 1) {
-    //   return ();
-    // }
-
-    // use this
-    console.log(this.props.savedBooks[Object.keys(this.props.savedBooks)[this.props.authorNo]]);
     const books = this.props.savedBooks[Object.keys(this.props.savedBooks)[this.props.authorNo]]
       .map(eachBook => (
-
         <Books
           EachBook={eachBook}
         />
@@ -46,7 +37,12 @@ BookContent.defaultProps = {
 
 const mapStateToProps = state => ({
   savedBooks: state.savedBooks,
+  display: state.display,
 });
 
-export default connect(mapStateToProps)(BookContent);
+const mapDispatchToProps = dispatch => ({
+  saveBooks: bookData => dispatch(displaySaveAction(bookData)),
 
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookContent);

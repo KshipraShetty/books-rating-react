@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MaterialIcon from 'material-icons-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import displaySaveAction from '../../redux/actions';
+import {displaySaveAction} from '../../redux/actions';
 
 class MainBodyContainer extends Component {
 <div className="MainBodyContainer">
