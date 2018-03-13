@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import displaySaveAction from '../../redux/actions';
-import './bookContent.css';
 import Books from '../books/books';
 
 class BookContent extends Component {
